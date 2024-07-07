@@ -18,7 +18,6 @@
       <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Intro_AAD/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Intro_AAD/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Intro_AAD/src/main/java/lk/ijse/gdse/aad68/intro_aad/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Intro_AAD/src/main/java/lk/ijse/gdse/aad68/intro_aad/Customer.java" afterDir="false" />
@@ -203,7 +202,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720329448290</updated>
-      <workItem from="1720329449380" duration="5323000" />
+      <workItem from="1720329449380" duration="16572000" />
     </task>
     <servers />
   </component>
