@@ -222,7 +222,6 @@ public class Student extends HttpServlet {
 
         try(var writer = resp.getWriter()){
             var studentId = req.getParameter("id");
-            Jsonb jsonb = JsonbBuilder.create();
             var ps = connection.prepareStatement(DELETE_STUDENT);
             ps.setString(1,studentId);
 
@@ -243,10 +242,15 @@ public class Student extends HttpServlet {
 
 
 
-    // ** MDN Web Docs
+    // ** MDN W
 //    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses
 
     // ** HTTP Status Codes
 //  https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses
+
+    // ** Pre-flight request
+//  https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request
+
+    // ** Simple request
 
 }
