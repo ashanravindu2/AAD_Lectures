@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60d29485-7020-4757-ba4d-7370ee317e48" name="Changes" comment="" />
+    <list default="true" id="60d29485-7020-4757-ba4d-7370ee317e48" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../JavaEE-CRUD.zip" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -69,13 +71,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat .executor": "Run",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -206,6 +209,8 @@
       <workItem from="1720329449380" duration="16572000" />
       <workItem from="1720924697987" duration="12189000" />
       <workItem from="1720939783617" duration="10830000" />
+      <workItem from="1721281106747" duration="13000" />
+      <workItem from="1721531876167" duration="9527000" />
     </task>
     <servers />
   </component>

@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
           var responseTextJSON = JSON.stringify(http.responseText);
           console.log(responseTextJSON);
         } else {
-          onsole.error("Failed!");
+          console.error("Failed!");
           console.error("Status: ", http.status); //Success status values =>
           console.log("Ready State: ", http.readyState);
         }
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Status: ", http.status); //Success status values =>
         console.log("Ready State: ", http.readyState);
       }
-    };
+    }; 
 
     http.open("POST", "http://localhost:8080/StudentManagement/student", true);
     http.setRequestHeader("Content-Type", "application/json");
