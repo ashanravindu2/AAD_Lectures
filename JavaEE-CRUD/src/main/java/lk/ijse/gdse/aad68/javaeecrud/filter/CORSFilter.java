@@ -16,6 +16,8 @@ public class CORSFilter extends HttpFilter {
 
         //we need to add the following headers to allow CORS
 
+        System.out.println("CORS Filter is called");
+
         var origin = getServletContext().getInitParameter("origin");
 
         if (origin.contains(getServletContext().getInitParameter("origin"))) {
@@ -26,7 +28,7 @@ public class CORSFilter extends HttpFilter {
 
             res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-            res.setHeader("Access-Control-Expose-Headers", "Content-Type");
+            res.setHeader("Access-Control-Expose-Headers", "Content-Type"); //This is to expose the headers to the javascript environment
 
         }
 

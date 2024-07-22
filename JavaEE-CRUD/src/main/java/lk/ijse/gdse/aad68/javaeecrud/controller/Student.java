@@ -15,6 +15,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import lk.ijse.gdse.aad68.javaeecrud.dto.StudentDTO;
 import lk.ijse.gdse.aad68.javaeecrud.util.Util;
 
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.sql.Connection;
@@ -39,17 +41,18 @@ public class Student extends HttpServlet {
 
         //Database Configuration
        try{
-           var dbClass = getServletContext().getInitParameter("db-class");
-           var dbUrl = getServletContext().getInitParameter("db-url");
-           var dbUserName = getServletContext().getInitParameter("db-username");
-           var dbPassword = getServletContext().getInitParameter("db-password");
+//           var dbClass = getServletContext().getInitParameter("db-class");
+//           var dbUrl = getServletContext().getInitParameter("db-url");
+//           var dbUserName = getServletContext().getInitParameter("db-username");
+//           var dbPassword = getServletContext().getInitParameter("db-password");
+//
+//           Class.forName(dbClass);
 
-           Class.forName(dbClass);
-           this.connection = DriverManager.getConnection(
-                   dbUrl,
-                   dbUserName,
-                   dbPassword
-           );
+           InitialContext ctx = new InitialContext();
+           DataSource pool = (DataSource) ctx.lookup("java:comp/env/jdbc/studentManagement");
+
+           this.connection = pool.getConnection();
+
        } catch (Exception e) {
            throw new RuntimeException(e);
        }
