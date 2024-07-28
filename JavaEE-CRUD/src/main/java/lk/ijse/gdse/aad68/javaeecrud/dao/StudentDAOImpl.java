@@ -19,7 +19,7 @@ public final class StudentDAOImpl implements StudentDAO {
 
 
     @Override
-    public String getStudent(StudentDTO student, Connection connection) throws Exception {
+    public String saveStudent(StudentDTO student, Connection connection) throws Exception {
         try {
             var ps = connection.prepareStatement(SAVE_STUDENT);
             ps.setString(1, student.getId());
@@ -77,4 +77,6 @@ public final class StudentDAOImpl implements StudentDAO {
         }
         return studentDTO;
     }
+
+
 }

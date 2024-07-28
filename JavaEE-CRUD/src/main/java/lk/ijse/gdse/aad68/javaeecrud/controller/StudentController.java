@@ -183,7 +183,7 @@ public class StudentController extends HttpServlet {
 
 
             //Save data in the DB
-            writer.write(studentDAOImpl.getStudent(student, connection));
+            writer.write(studentDAOImpl.saveStudent(student, connection));
             resp.setStatus(HttpServletResponse.SC_CREATED);
 
 //            // Create Response
