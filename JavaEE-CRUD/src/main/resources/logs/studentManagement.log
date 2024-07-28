@@ -1,2 +1,14 @@
 12:09:48.561 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.controller.Student - Init method Invoked
 12:09:49.054 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.controller.Student - Connection initialized: 2005867580, URL=jdbc:mysql://localhost:3306/javaEECrud?createDatabaseIfNotExist=true, MySQL Connector/J
+13:08:42.929 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.controller.Student - Init method Invoked
+13:08:43.567 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.controller.Student - Connection initialized: 1977215390, URL=jdbc:mysql://localhost:3306/javaEECrud?createDatabaseIfNotExist=true, MySQL Connector/J
+13:09:59.133 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Init method Invoked
+13:09:59.657 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Connection initialized: 2046810794, URL=jdbc:mysql://localhost:3306/javaEECrud?createDatabaseIfNotExist=true, MySQL Connector/J
+13:24:22.377 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Init method Invoked
+13:24:22.886 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Connection initialized: 1756299512, URL=jdbc:mysql://localhost:3306/javaEECrud?createDatabaseIfNotExist=true, MySQL Connector/J
+13:26:24.095 [RMI TCP Connection(5)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Init method Invoked
+13:26:24.353 [RMI TCP Connection(5)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Connection initialized: 998497529, URL=jdbc:mysql://localhost:3306/javaEECrud?createDatabaseIfNotExist=true, MySQL Connector/J
+13:26:34.863 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Init method Invoked
+13:26:35.370 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Connection initialized: 624563663, URL=jdbc:mysql://localhost:3306/javaEECrud?createDatabaseIfNotExist=true, MySQL Connector/J
+13:28:18.299 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Init method Invoked
+13:28:18.797 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Connection initialized: 1909329262, URL=jdbc:mysql://localhost:3306/javaEECrud?createDatabaseIfNotExist=true, MySQL Connector/J

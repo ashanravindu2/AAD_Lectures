@@ -1,17 +1,13 @@
 package lk.ijse.gdse.aad68.javaeecrud.controller;
 
-import jakarta.json.Json;
-import jakarta.json.JsonArray;
-import jakarta.json.JsonObject;
-import jakarta.json.JsonReader;
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
-import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lk.ijse.gdse.aad68.javaeecrud.dao.StudentDAOImpl;
 import lk.ijse.gdse.aad68.javaeecrud.dto.StudentDTO;
 import lk.ijse.gdse.aad68.javaeecrud.util.Util;
 import org.slf4j.Logger;
@@ -19,19 +15,16 @@ import org.slf4j.LoggerFactory;
 
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.util.UUID;
 
 @WebServlet(urlPatterns = "/student", loadOnStartup = 2)
-public class Student extends HttpServlet {
+public class StudentController extends HttpServlet {
 
-    static Logger logger = LoggerFactory.getLogger(Student.class);
+    static Logger logger = LoggerFactory.getLogger(StudentController.class);
 
     Connection connection;
+
 
     public static String SAVE_STUDENT = "INSERT INTO student ( id, name, email, address ) VALUES (?, ?, ?, ?)" ;
     public static String GET_STUDENT = "SELECT * FROM student WHERE id = ?";
@@ -47,7 +40,7 @@ public class Student extends HttpServlet {
 //        System.out.println(initParameter);
 
         //Database Configuration
-       try{
+        try{
 //           var dbClass = getServletContext().getInitParameter("db-class");
 //           var dbUrl = getServletContext().getInitParameter("db-url");
 //           var dbUserName = getServletContext().getInitParameter("db-username");
@@ -55,46 +48,57 @@ public class Student extends HttpServlet {
 //
 //           Class.forName(dbClass);
 
-           InitialContext ctx = new InitialContext();
-           DataSource pool = (DataSource) ctx.lookup("java:comp/env/jdbc/studentManagement");
+            InitialContext ctx = new InitialContext();
+            DataSource pool = (DataSource) ctx.lookup("java:comp/env/jdbc/studentManagement");
 
-           this.connection = pool.getConnection();
+            this.connection = pool.getConnection();
 
-           logger.info("Connection initialized: {}", this.connection);
+            logger.info("Connection initialized: {}", this.connection);
 
-       } catch (Exception e) {
+        } catch (Exception e) {
 
-           logger.error("Failed to connect to the database");
-           throw new RuntimeException(e);
-       }
+            logger.error("Failed to connect to the database");
+            throw new RuntimeException(e);
+        }
 
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       //Todo: Get Student
+        //Todo: Get Student
 
-        try ( var writer = resp.getWriter()){
-            var studentDTO = new StudentDTO();
+        try(var writer = resp.getWriter()) {
+            var studentDAOIMPL = new StudentDAOImpl();
             Jsonb jsonb = JsonbBuilder.create();
-            var studentId = req.getParameter("id"); //Send the exact parameter name from the postmen
-            var ps = connection.prepareStatement(GET_STUDENT);
-            ps.setString(1,studentId);
-            var rst = ps.executeQuery();
-            while(rst.next()){
-
-                studentDTO.setId(rst.getString( "id"));
-                studentDTO.setName(rst.getString("name"));
-                studentDTO.setEmail(rst.getString("email"));
-                studentDTO.setAddress(rst.getString("address"));
-
-            }
+            //DB Process
+            var studentId = req.getParameter("id");;
             resp.setContentType("application/json");
-            jsonb.toJson(studentDTO, writer );
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            jsonb.toJson(studentDAOIMPL.getStudent(studentId,connection),writer);
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
+//        try ( var writer = resp.getWriter()){
+//            var studentDTO = new StudentDTO();
+//            Jsonb jsonb = JsonbBuilder.create();
+//            var studentId = req.getParameter("id"); //Send the exact parameter name from the postmen
+//            var ps = connection.prepareStatement(GET_STUDENT);
+//            ps.setString(1,studentId);
+//            var rst = ps.executeQuery();
+//            while(rst.next()){
+//
+//                studentDTO.setId(rst.getString( "id"));
+//                studentDTO.setName(rst.getString("name"));
+//                studentDTO.setEmail(rst.getString("email"));
+//                studentDTO.setAddress(rst.getString("address"));
+//
+//            }
+//            resp.setContentType("application/json");
+//            jsonb.toJson(studentDTO, writer );
+//
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
 
     }
 
@@ -167,37 +171,28 @@ public class Student extends HttpServlet {
 //
 //        }
 
+
         // Object binding of the JSON
 
         try(var writer = resp.getWriter()){  //try-with-resource(Best Practise)
 
             Jsonb jsonb = JsonbBuilder.create();
+            var studentDAOImpl = new StudentDAOImpl();
             StudentDTO student = jsonb.fromJson(req.getReader(), StudentDTO.class);
             student.setId(Util.idGenerator());
-            System.out.println(student);
+
 
             //Save data in the DB
-            var ps = connection.prepareStatement(SAVE_STUDENT);
-            ps.setString(1,student.getId());
-            ps.setString(2,student.getName());
-            ps.setString(3,student.getEmail());
-            ps.setString(4,student.getAddress());
-
-            if(ps.executeUpdate() != 0){
-                resp.setStatus(HttpServletResponse.SC_CREATED);
-                writer.write("Student saved successfully!");
-
-            }else{
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                writer.write("Failed to save the student!");
-            }
+            writer.write(studentDAOImpl.getStudent(student, connection));
+            resp.setStatus(HttpServletResponse.SC_CREATED);
 
 //            // Create Response
 //            resp.setContentType("application/json");
 //            jsonb.toJson(student, writer);
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            e.printStackTrace();
         }
 
     }
@@ -206,27 +201,20 @@ public class Student extends HttpServlet {
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //Todo: Update Student
 
-        try(var writer = resp.getWriter()){
+        try (var writer = resp.getWriter()) {
+            var studentDAOIMPL = new StudentDAOImpl();
             var studentId = req.getParameter("id");
             Jsonb jsonb = JsonbBuilder.create();
             StudentDTO student = jsonb.fromJson(req.getReader(), StudentDTO.class);
-            var ps = connection.prepareStatement(UPDATE_STUDENT);
-            ps.setString(1,student.getName());
-            ps.setString(2,student.getEmail());
-            ps.setString(3,student.getAddress());
-            ps.setString(4, studentId);
-
-            if ( ps.executeUpdate() != 0 ){
+            if(studentDAOIMPL.updateStudent(studentId,student,connection)){
                 resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
-                writer.write("Student updated successfully!"); // we are not sending any content when deleting and updating data
-            }else{
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            }else {
                 writer.write("Student update failed!");
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        }catch (Exception e){
+            e.printStackTrace();
         }
-
 
     }
 
@@ -234,23 +222,18 @@ public class Student extends HttpServlet {
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //Todo: Delete Student
 
-        try(var writer = resp.getWriter()){
+        try (var writer = resp.getWriter()) {
             var studentId = req.getParameter("id");
-            var ps = connection.prepareStatement(DELETE_STUDENT);
-            ps.setString(1,studentId);
-
-            if ( ps.executeUpdate() != 0 ){
-                resp.setStatus(HttpServletResponse.SC_NO_CONTENT); // we are not sending any content when deleting and updating data
-                writer.write("Student deleted successfully!");
-            }else{
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            var studentDAOIMPL = new StudentDAOImpl();
+            if(studentDAOIMPL.deleteStudent(studentId,connection)){
+                resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+            }else {
                 writer.write("Student delete failed!");
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        }catch (Exception e){
+            e.printStackTrace();
         }
-
-
 
     }
 
