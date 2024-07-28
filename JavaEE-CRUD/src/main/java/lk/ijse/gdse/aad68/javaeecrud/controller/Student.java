@@ -14,6 +14,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lk.ijse.gdse.aad68.javaeecrud.dto.StudentDTO;
 import lk.ijse.gdse.aad68.javaeecrud.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
@@ -24,8 +26,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.UUID;
 
-@WebServlet(urlPatterns = "/student")
+@WebServlet(urlPatterns = "/student", loadOnStartup = 2)
 public class Student extends HttpServlet {
+
+    static Logger logger = LoggerFactory.getLogger(Student.class);
 
     Connection connection;
 
@@ -36,6 +40,9 @@ public class Student extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
+
+        logger.info("Init method Invoked");
+
 //        var initParameter = getServletConfig().getInitParameter("Hello my param");
 //        System.out.println(initParameter);
 
@@ -53,7 +60,11 @@ public class Student extends HttpServlet {
 
            this.connection = pool.getConnection();
 
+           logger.info("Connection initialized: {}", this.connection);
+
        } catch (Exception e) {
+
+           logger.error("Failed to connect to the database");
            throw new RuntimeException(e);
        }
 
@@ -255,5 +266,8 @@ public class Student extends HttpServlet {
 //  https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request
 
     // ** Simple request
+
+    // ** Logback
+//    https://www.baeldung.com/java-logging-intro
 
 }
