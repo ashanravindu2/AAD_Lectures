@@ -184,6 +184,7 @@ public class StudentController extends HttpServlet {
 
             //Save data in the DB
             writer.write(studentDAOImpl.saveStudent(student, connection));
+            logger.info("Student saved successfully");
             resp.setStatus(HttpServletResponse.SC_CREATED);
 
 //            // Create Response
@@ -191,6 +192,7 @@ public class StudentController extends HttpServlet {
 //            jsonb.toJson(student, writer);
 
         } catch (Exception e) {
+            logger.error("Connection failed!");
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             e.printStackTrace();
         }
