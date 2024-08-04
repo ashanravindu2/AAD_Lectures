@@ -14,3 +14,8 @@
 13:28:18.797 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Connection initialized: 1909329262, URL=jdbc:mysql://localhost:3306/javaEECrud?createDatabaseIfNotExist=true, MySQL Connector/J
 13:40:46.255 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Init method Invoked
 13:40:46.935 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Connection initialized: 2110189435, URL=jdbc:mysql://localhost:3306/javaEECrud?createDatabaseIfNotExist=true, MySQL Connector/J
+13:47:01.309 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Init method Invoked
+13:47:01.763 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Connection initialized: 1723594864, URL=jdbc:mysql://localhost:3306/javaEECrud?createDatabaseIfNotExist=true, MySQL Connector/J
+13:47:17.115 [http-nio-8080-exec-7] INFO  l.i.g.a.j.c.StudentController - Student saved successfully
+20:59:32.965 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Init method Invoked
+20:59:33.653 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.g.a.j.c.StudentController - Connection initialized: 2007401455, URL=jdbc:mysql://localhost:3306/javaEECrud?createDatabaseIfNotExist=true, MySQL Connector/J
