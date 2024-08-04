@@ -6,13 +6,13 @@ import lk.ijse.spring.dependency_injection.dep.GoodGirl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Boy {
 
 //    // ** Field Injection **=======================================================================================================
-
     @Autowired //Autowired is used to inject the dependencies to the bean
     @Qualifier("properties")
     @Wow //Custom Annotation
@@ -32,6 +32,7 @@ public class Boy {
 //        this.goodGirl = goodGirl;
 //    }
 
+
 //    // ** Setter Injection **=======================================================================================================
 //    @Qualifier("properties")
 //    private GoodGirl goodGirl;
@@ -42,14 +43,19 @@ public class Boy {
 //        this.goodGirl = goodGirl;
 //    }
 
+
     @PostConstruct // This annotation is used to indicate that this method should be executed after the instantiation of the bean,This is not a spring annotation it's a jakarta annotation
     public void init(){
 //        System.out.println(goodGirl);
         goodGirl.love();
     }
 
-
-
+//    @Autowired
+    @Autowired(required = false) //This is used to avoid the exception when the dependency is not available
+    public void mymethod(@Nullable String name){
+        System.out.println("Name : "+name);
+        System.out.println("Mymehtod is called");
+    }
 
 }
 
