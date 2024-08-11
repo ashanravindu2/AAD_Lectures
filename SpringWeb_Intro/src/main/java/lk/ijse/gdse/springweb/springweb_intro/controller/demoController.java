@@ -14,8 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 // which means that it not only marks the class as a controller but also ensures that the return values of the methods are automatically
 // serialized into JSON or XML and sent back to the client.
 public class DemoController {
-//    @GetMapping(value = "/health")  // using this annotation we can define the URL for this method
-//    @GetMapping("/health/**") // using this mapping we can define the URL for this method
+ // using this annotation we can define the URL for this method
+ // using this mapping we can define the URL for this method
+
+    @GetMapping("/health")
+    public String health(){    //http://localhost:8080/SpringWebIntro/demo/health
+        return "DemoController is running perfectly";
+    }
+    @GetMapping("/health/**")
+    public String healthWithasterix(@PathVariable("name") String name){  //http://localhost:8080/SpringWebIntro/demo/health/Demo
+        return "DemoController is running perfectly with: "+ name;
+    }
     @GetMapping("/health/{name}")
     public String healthCheck(@PathVariable("name") String name){  //http://localhost:8080/SpringWebIntro/demo/health/Demo
         return "DemoController is running perfectly with: "+ name;
@@ -23,6 +32,10 @@ public class DemoController {
     @GetMapping(value = "patternRegex/{id:C\\d{3}}") //http://localhost:8080/SpringWebIntro/demo/patternRegex/C001
     public String testRegex(@PathVariable("id") String id){
         return "Pattern Regex: "+id;
+    }
+    @GetMapping(params = "test=all") //http://localhost:8080/SpringWebIntro/demo?test=all
+    public String getWithParams(){
+        return "All are tested";
     }
     @GetMapping
     public String otherTest(){
