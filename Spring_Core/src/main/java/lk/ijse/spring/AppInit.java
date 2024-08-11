@@ -1,6 +1,9 @@
 package lk.ijse.spring;
 
 import lk.ijse.spring.config.Config;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class AppInit {
@@ -10,6 +13,9 @@ public class AppInit {
         ctx.register(Config.class); // Source for bean definitions
         ctx.refresh(); // Refresh the container this will create the beans
 //        ctx.close(); // Close the container this will destroy the beans
+        ConfigurableBeanFactory beanFactory = ctx.getBeanFactory();
+        boolean isSingletonCustomer = beanFactory.isSingleton("customer");
+        System.out.println("Is customer a singleton: "+isSingletonCustomer);
         ctx.registerShutdownHook(); // Close the container this will destroy the beans,Difference between .close() vs registerShutdownHook() is that .close() will not work in a non-web application
     }
 }
