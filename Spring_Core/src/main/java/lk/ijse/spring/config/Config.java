@@ -14,7 +14,7 @@ import org.springframework.context.annotation.*;
 //@ComponentScan(basePackageClasses = {Customer.class}) // BaseClass attribute is used to specify the base class to scan the components
 
 @ComponentScan(basePackageClasses = { Transaction.class, TestBean.class })
-@EnableAspectJAutoProxy // This annotation is used to
+@EnableAspectJAutoProxy
 public class Config {
     @Bean // This annotation used to register classes as component that we don't have the source code
     public Order order(){
