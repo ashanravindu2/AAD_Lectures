@@ -13,8 +13,6 @@ import org.springframework.context.annotation.Scope;
 // this class is used to scan the components)
 // basePackages attribute is used to specify the base package to scan the components
 @ComponentScan(basePackageClasses = {Customer.class}) // BaseClass attribute is used to specify the base class to scan the components
-//@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON) // This annotation is used to indicate that this is a singleton scope class (singleton scope means that only one instance of the class is created)
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // This annotation is used to indicate that this is a prototype scope class (prototype scope means that multiple instances of the class are created)
 public class Config {
     @Bean // This annotation used to register classes as component that we don't have the source code
     public Order order(){
