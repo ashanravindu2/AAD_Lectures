@@ -1,5 +1,6 @@
 package lk.ijse.spring;
 
+import lk.ijse.spring.aop.Transaction;
 import lk.ijse.spring.config.Config;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -9,13 +10,19 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class AppInit {
     public static void main(String[] args) {
         // Create spring container for the application (IOC)
-        var ctx = new AnnotationConfigApplicationContext();
+        var ctx = new AnnotationConfigApplicationContext(); // Create a new container
         ctx.register(Config.class); // Source for bean definitions
         ctx.refresh(); // Refresh the container this will create the beans
 //        ctx.close(); // Close the container this will destroy the beans
-        ConfigurableBeanFactory beanFactory = ctx.getBeanFactory();
-        boolean isSingletonCustomer = beanFactory.isSingleton("customer");
-        System.out.println("Is customer a singleton: "+isSingletonCustomer);
+//        ConfigurableBeanFactory beanFactory = ctx.getBeanFactory(); // Get the bean factory
+//        boolean isSingletonCustomer = beanFactory.isSingleton("customer"); // Check whether the customer bean is a singleton
+//        System.out.println("Is customer a singleton: "+isSingletonCustomer);
+
+//        Transaction transaction = ctx.getBean("transaction", Transaction.class); //Get bean
+        Transaction transaction = (Transaction) ctx.getBean("transaction"); //Get bean
+        transaction.startTransaction();
+        transaction.endTransaction();
+
         ctx.registerShutdownHook(); // Close the container this will destroy the beans,Difference between .close() vs registerShutdownHook() is that .close() will not work in a non-web application
     }
 }
