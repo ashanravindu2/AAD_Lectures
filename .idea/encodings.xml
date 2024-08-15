@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Core_Practise/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Core_Practise/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Intro_AAD/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Intro_AAD/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaEE-CRUD/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaEE-CRUD/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringWeb_Intro/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringWeb_Intro/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Core/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
