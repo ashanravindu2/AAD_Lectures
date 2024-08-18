@@ -1,6 +1,7 @@
 package lk.ijse.gdse.springweb.springweb_intro.controller;
 
 
+import lk.ijse.gdse.springweb.springweb_intro.dto.CustomerDto;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
@@ -84,6 +85,14 @@ public class DemoController {
     public String handleMultiValueMap(@RequestParam("id") String id,@RequestParam ("desc") String desc , @RequestParam MultiValueMap<String,String> params){
         System.out.println(params);
        return params.toString();
+    }
+
+    @PostMapping(value = "/customer",consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String JSONDto(@RequestBody CustomerDto customerDto){
+        System.out.println(customerDto.getId());
+        System.out.println(customerDto.getName());
+        System.out.println(customerDto.getAddress());
+        return "Covert Successfully";
     }
 
 

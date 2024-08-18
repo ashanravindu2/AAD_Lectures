@@ -10,11 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ba2ba11-67fd-4df1-b3d6-b33c0c2aaf61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SpringWeb_Intro/src/main/java/lk/ijse/gdse/springweb/springweb_intro/controller/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringWeb_Intro/src/main/java/lk/ijse/gdse/springweb/springweb_intro/dto/CustomerDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringWeb_Intro/src/main/java/lk/ijse/gdse/springweb/springweb_intro/dto/ItemDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringWeb_Intro/src/main/java/lk/ijse/gdse/springweb/springweb_intro/controller/demoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringWeb_Intro/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringWeb_Intro/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringWeb_Intro/src/main/java/lk/ijse/gdse/springweb/springweb_intro/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringWeb_Intro/src/main/java/lk/ijse/gdse/springweb/springweb_intro/controller/DemoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,31 +47,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Tomcat Server.Tomcat 10.1.24.executor": "Run",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "openjdk-21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ravin/OneDrive/Desktop/AAD_Lectures",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.24.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ravin/OneDrive/Desktop/AAD_Lectures&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ravin\OneDrive\Desktop\AAD_Lectures" />
@@ -170,6 +170,7 @@
     <attachedChunks>
       <set>
         <option value="jdk-11.0.21-corretto-11.0.21-f644763e9732-97de7592" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
         <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
         <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
       </set>
@@ -188,6 +189,8 @@
       <workItem from="1723717821401" duration="919000" />
       <workItem from="1723734013174" duration="8000" />
       <workItem from="1723951790159" duration="969000" />
+      <workItem from="1723963548690" duration="325000" />
+      <workItem from="1723964624371" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="DONE">
       <option name="closed" value="true" />
