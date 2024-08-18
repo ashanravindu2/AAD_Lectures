@@ -9,13 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ba2ba11-67fd-4df1-b3d6-b33c0c2aaf61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NoteTaker/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NoteTaker/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NoteTaker/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NoteTaker/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NoteTaker/.idea/vcs.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5ba2ba11-67fd-4df1-b3d6-b33c0c2aaf61" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +71,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IJSE ALL\AAD LEC\AAD Start\AAD_Lectures\Note" />
       <recent name="C:\Users\ravin\OneDrive\Desktop\AAD_Lectures" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IJSE ALL\AAD LEC\AAD Start\AAD_Lectures\Note" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.242">
@@ -215,7 +213,7 @@
       <workItem from="1723951790159" duration="969000" />
       <workItem from="1723963548690" duration="325000" />
       <workItem from="1723964624371" duration="1000" />
-      <workItem from="1723964661872" duration="923000" />
+      <workItem from="1723964661872" duration="986000" />
     </task>
     <task id="LOCAL-00001" summary="DONE">
       <option name="closed" value="true" />
@@ -249,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723965307738</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="bug fix in JSONToDto and NoteTaker intialize">
+      <option name="closed" value="true" />
+      <created>1723965615080</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1723965615080</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
