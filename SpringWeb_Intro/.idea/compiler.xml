@@ -2,16 +2,11 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Intro_AAD68" />
-        <module name="JavaEE-CRUD" />
-        <module name="Spring_Intro" />
         <module name="SpringWeb_Intro" />
-        <module name="Core-Practise" />
       </profile>
     </annotationProcessing>
   </component>

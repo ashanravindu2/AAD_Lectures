@@ -1,10 +1,8 @@
 package lk.ijse.gdse.springweb.springweb_intro;
 
-import jakarta.servlet.ServletContext;
-import jakarta.servlet.ServletException;
+
 import lk.ijse.gdse.springweb.springweb_intro.config.WebAppConfig;
 import lk.ijse.gdse.springweb.springweb_intro.config.WebAppRootConfig;
-import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
