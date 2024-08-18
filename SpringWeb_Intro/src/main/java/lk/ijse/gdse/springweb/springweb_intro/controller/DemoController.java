@@ -3,9 +3,11 @@ package lk.ijse.gdse.springweb.springweb_intro.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
+import java.util.Map;
 
 @RequestMapping("/demo")
 //The @RequestMapping annotation in Spring Web is used to map web requests to specific handler classes and/or handler methods.
@@ -71,4 +73,18 @@ public class DemoController {
             return ResponseEntity.badRequest().body("Odd Number");
         }
     }
+
+    @PostMapping(value = "/params",params = {"id","desc"})
+    public String handleMap(@RequestParam("id") String id,@RequestParam ("desc") String desc , @RequestParam Map<String,String>params){
+        System.out.println(params);
+        return "Handle map with params "+params;
+    }
+
+    @PostMapping(value = "/multiparams",params = {"id","desc"})
+    public String handleMultiValueMap(@RequestParam("id") String id,@RequestParam ("desc") String desc , @RequestParam MultiValueMap<String,String> params){
+        System.out.println(params);
+       return params.toString();
+    }
+
+
 }
