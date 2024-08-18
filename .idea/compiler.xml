@@ -12,6 +12,7 @@
         <module name="Spring_Intro" />
         <module name="SpringWeb_Intro" />
         <module name="Core-Practise" />
+        <module name="SpringWeb_Intro (1)" />
       </profile>
     </annotationProcessing>
   </component>

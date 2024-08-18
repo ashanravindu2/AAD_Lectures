@@ -10,9 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ba2ba11-67fd-4df1-b3d6-b33c0c2aaf61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/config/WebAppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/config/WebAppRootConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/controller/NoteTaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NoteTaker/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NoteTaker/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NoteTaker/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NoteTaker/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NoteTaker/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,42 +42,45 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2kgswovO7OTDC8RKTIQtRdhVIiz" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.24.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ravin/OneDrive/Desktop/AAD_Lectures&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Tomcat Server.Tomcat 10.1.24.executor": "Run",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/IJSE ALL/AAD LEC/AAD Start/AAD_Lectures/Note",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ravin\OneDrive\Desktop\AAD_Lectures" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.242">
     <configuration name="Tomcat 10.1.24" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.24" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -163,6 +168,27 @@
         </option>
       </method>
     </configuration>
+    <configuration name="Tomcat 10.1.242" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.242" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="Intro_AAD68:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Intro_AAD68_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Intro_AAD68:war exploded" />
+        </option>
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -189,7 +215,7 @@
       <workItem from="1723951790159" duration="969000" />
       <workItem from="1723963548690" duration="325000" />
       <workItem from="1723964624371" duration="1000" />
-      <workItem from="1723964661872" duration="615000" />
+      <workItem from="1723964661872" duration="923000" />
     </task>
     <task id="LOCAL-00001" summary="DONE">
       <option name="closed" value="true" />
@@ -215,14 +241,24 @@
       <option name="project" value="LOCAL" />
       <updated>1723964747199</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="bug fix in JSONToDto and NoteTaker intialize">
+      <option name="closed" value="true" />
+      <created>1723965307738</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723965307738</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="DONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="DONE" />
+    <MESSAGE value="bug fix in JSONToDto and NoteTaker intialize" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fix in JSONToDto and NoteTaker intialize" />
   </component>
 </project>
