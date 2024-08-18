@@ -1,4 +1,4 @@
 package lk.ijse.gdse.notetaker.controller;
 
-public class DemoController {
+public class NoteTaker {
 }
