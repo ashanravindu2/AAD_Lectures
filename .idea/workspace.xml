@@ -9,7 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ba2ba11-67fd-4df1-b3d6-b33c0c2aaf61" name="Changes" comment="" />
+    <list default="true" id="5ba2ba11-67fd-4df1-b3d6-b33c0c2aaf61" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/dto/NoteDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/util/AppUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NoteTaker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/config/WebAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/config/WebAppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/config/WebAppRootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/config/WebAppRootConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/controller/NoteController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,32 +50,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Tomcat Server.Tomcat 10.1.24.executor": "Run",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/IJSE ALL/AAD LEC/AAD Start/AAD_Lectures/Note",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.24.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/IJSE ALL/AAD LEC/AAD Start/AAD_Lectures/Note&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\IJSE ALL\AAD LEC\AAD Start\AAD_Lectures\Note" />
@@ -214,6 +221,7 @@
       <workItem from="1723963548690" duration="325000" />
       <workItem from="1723964624371" duration="1000" />
       <workItem from="1723964661872" duration="986000" />
+      <workItem from="1723965880439" duration="710000" />
     </task>
     <task id="LOCAL-00001" summary="DONE">
       <option name="closed" value="true" />
@@ -255,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723965615080</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="bug fix in JSONToDto and NoteTaker intialize">
+      <option name="closed" value="true" />
+      <created>1723965944888</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723965944888</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
