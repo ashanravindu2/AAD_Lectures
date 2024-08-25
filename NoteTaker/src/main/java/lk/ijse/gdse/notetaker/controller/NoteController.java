@@ -34,15 +34,16 @@ public class NoteController {
     @GetMapping(value = "getAllNotes",produces = MediaType.APPLICATION_JSON_VALUE)
     public List<NoteDto> getAllNotes(){
         //Todo Handle With BO
-       var updateNote = noteBo.getAllNotes();
-        return null;
+       return noteBo.getAllNotes();
+
     }
 
     @GetMapping(value = "/{noteId}",produces = MediaType.APPLICATION_JSON_VALUE)
     public NoteDto getNote(@PathVariable("noteId") String noteId){
         //Todo Handle With BO
         System.out.println("NoteId :"+ noteId);
-        return null;
+        return noteBo.findNoteById(noteId);
+
     }
 
     @PutMapping(value = "/{noteId}",produces = MediaType.APPLICATION_JSON_VALUE)
@@ -51,20 +52,16 @@ public class NoteController {
      /*   System.out.println("NoteId :"+ noteId);
         System.out.println(noteDto + " Updated");
         return "Note Updated Successfully";*/
-       boolean updated =  noteBo.updateNote(noteId,noteDto);
-       if (!updated){
-           return "Note Not Found";
-           }
+       noteBo.updateNote(noteId,noteDto);
         return "Note Updated Successfully";
     }
 
     @DeleteMapping(value = "/{noteId}")
     public String deleteNote(@PathVariable("noteId") String noteId){
         //Todo Handle With BO
-        /*System.out.println("NoteId :"+ noteId);
-        return "Note Deleted Successfully"+noteId;*/
-        noteBo.deleteNote(noteId);
-        return "Note Deleted Successfully"+noteId;
+       noteBo.deleteNote(noteId);
+        return "Note Deleted Successfully";
     }
+
 
 }

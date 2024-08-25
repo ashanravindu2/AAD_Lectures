@@ -10,12 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ba2ba11-67fd-4df1-b3d6-b33c0c2aaf61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/dto/NoteDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/util/AppUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoteTaker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/config/WebAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/config/WebAppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/config/WebAppRootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/config/WebAppRootConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/controller/NoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringWeb_Intro/target/SpringWeb_Intro-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/SpringWeb_Intro/target/SpringWeb_Intro-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringWeb_Intro/target/SpringWeb_Intro-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/gdse/springweb/springweb_intro/controller/DemoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringWeb_Intro/target/SpringWeb_Intro-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/gdse/springweb/springweb_intro/controller/DemoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringWeb_Intro/target/SpringWeb_Intro-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/gdse/springweb/springweb_intro/dto/CustomerDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringWeb_Intro/target/SpringWeb_Intro-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/gdse/springweb/springweb_intro/dto/CustomerDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringWeb_Intro/target/SpringWeb_Intro-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/gdse/springweb/springweb_intro/dto/ItemDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringWeb_Intro/target/SpringWeb_Intro-1.0-SNAPSHOT/WEB-INF/classes/lk/ijse/gdse/springweb/springweb_intro/dto/ItemDto.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +56,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Tomcat Server.Tomcat 10.1.24.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.242.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -85,18 +86,19 @@
       <recent name="E:\IJSE ALL\AAD LEC\AAD Start\AAD_Lectures\Note" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.242">
-    <configuration name="Tomcat 10.1.24" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.24" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="Tomcat 10.1.242" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.242" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/SpringWeb_Intro" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="SpringWeb_Intro:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/SpringWeb_Intro" />
+            <option name="CONTEXT_PATH" value="/SpringWeb_Intro_" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="0239ed12-eb20-4e29-9da1-b4d58526ba11" />
+        <option name="BASE_DIRECTORY_NAME" value="daca7638-477e-4e7c-813e-70e7f6308dba" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -104,7 +106,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="9350" />
+        <option name="DEBUG_PORT" value="10352" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -173,27 +175,6 @@
         </option>
       </method>
     </configuration>
-    <configuration name="Tomcat 10.1.242" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.242" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment>
-        <artifact name="Intro_AAD68:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/Intro_AAD68_war_exploded" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="Intro_AAD68:war exploded" />
-        </option>
-      </method>
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -221,7 +202,12 @@
       <workItem from="1723963548690" duration="325000" />
       <workItem from="1723964624371" duration="1000" />
       <workItem from="1723964661872" duration="986000" />
-      <workItem from="1723965880439" duration="710000" />
+      <workItem from="1723965880439" duration="1388000" />
+      <workItem from="1724055583401" duration="908000" />
+      <workItem from="1724391063599" duration="595000" />
+      <workItem from="1724519810678" duration="954000" />
+      <workItem from="1724556680210" duration="1509000" />
+      <workItem from="1724558224905" duration="656000" />
     </task>
     <task id="LOCAL-00001" summary="DONE">
       <option name="closed" value="true" />
@@ -271,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723965944888</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="NoteTaker controller postTest">
+      <option name="closed" value="true" />
+      <created>1723974815242</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723974815242</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +275,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="DONE" />
     <MESSAGE value="bug fix in JSONToDto and NoteTaker intialize" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix in JSONToDto and NoteTaker intialize" />
+    <MESSAGE value="NoteTaker controller postTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="NoteTaker controller postTest" />
   </component>
 </project>

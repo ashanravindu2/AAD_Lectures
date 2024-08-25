@@ -9,10 +9,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Intro_AAD68" />
         <module name="JavaEE-CRUD" />
+        <module name="web" />
         <module name="Spring_Intro" />
         <module name="SpringWeb_Intro" />
         <module name="Core-Practise" />
-        <module name="SpringWeb_Intro (1)" />
       </profile>
     </annotationProcessing>
   </component>
