@@ -8,7 +8,10 @@ public class AppUtil {
      /*   return "N"+System.currentTimeMillis();*/
        // return "N"+ UUID.randomUUID().toString();
         return "NOTE"+new Random().nextInt(10000);
-
-
     }
+
+    //mapping
+    //Note details
+
+
 }
