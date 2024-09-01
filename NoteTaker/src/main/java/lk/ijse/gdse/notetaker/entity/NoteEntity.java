@@ -7,12 +7,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Table(name = "notes")
 @Entity
-public class NoteEntity {
+public class NoteEntity implements Serializable {
     @Id
     public String noteId;
     public String noteTitle;

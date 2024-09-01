@@ -2,6 +2,7 @@ package lk.ijse.gdse.notetaker.bo;
 
 import lk.ijse.gdse.notetaker.dao.NoteDao;
 import lk.ijse.gdse.notetaker.dto.NoteDto;
+import lk.ijse.gdse.notetaker.entity.NoteEntity;
 import lk.ijse.gdse.notetaker.util.AppUtil;
 import lk.ijse.gdse.notetaker.util.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -33,7 +35,7 @@ public final class NoteBoImpl implements NoteBo {
 
     @Override
     public boolean updateNote(String noteId, NoteDto noteDto) {
-        var noteEntity = noteDao.findById(noteId);
+        Optional<NoteEntity> noteEntity = noteDao.findById(noteId);
         if (noteEntity.isPresent()){
             var note = noteEntity.get();
             note.setNoteTitle(noteDto.getNoteTitle());

@@ -22,6 +22,11 @@ public class NoteController {
     @Autowired
     private final NoteBo noteBo;
 
+    @GetMapping("health")
+    public String healthCheck(){
+        return "Note taker is running!";
+    }
+
     //Todo: CRUD of the Note
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> createNote(@RequestBody NoteDto noteDto){ //http://localhost:8080/NoteTaker/api/v1/notes
