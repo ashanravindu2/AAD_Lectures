@@ -10,14 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ba2ba11-67fd-4df1-b3d6-b33c0c2aaf61" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoteTaker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/bo/NoteBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/bo/NoteBo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/bo/NoteBoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/bo/NoteBoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/AppInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/config/WebAppRootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/config/WebAppRootConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/controller/NoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/util/AppUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/util/AppUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/util/Mapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/NoteTaker/src/main/java/lk/ijse/gdse/notetaker/util/Mapping.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,6 +204,7 @@
       <workItem from="1724558224905" duration="656000" />
       <workItem from="1725115368780" duration="1534000" />
       <workItem from="1725149372035" duration="1001000" />
+      <workItem from="1725162356677" duration="64000" />
     </task>
     <task id="LOCAL-00001" summary="DONE">
       <option name="closed" value="true" />

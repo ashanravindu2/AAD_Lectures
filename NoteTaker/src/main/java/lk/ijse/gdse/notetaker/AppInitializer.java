@@ -6,7 +6,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{lk.ijse.gdse.aad68.notetaker.config.WebAppRootConfig.class};
+        return new Class[]{lk.ijse.gdse.notetaker.config.WebAppRootConfig.class};
     }
 
     @Override

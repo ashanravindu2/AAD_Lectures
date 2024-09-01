@@ -1,4 +1,4 @@
-package lk.ijse.gdse.aad68.notetaker.config;
+package lk.ijse.gdse.notetaker.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import org.modelmapper.ModelMapper;
@@ -20,7 +20,6 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan(basePackages = "lk.ijse.gdse.notetaker")
-@EnableWebMvc
 @EnableJpaRepositories(basePackages = "lk.ijse.gdse.notetaker")
 @EnableTransactionManagement
 public class WebAppRootConfig {
