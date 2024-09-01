@@ -32,7 +32,7 @@ public final class NoteBoImpl implements NoteBo {
     }
 
     @Override
-    public void updateNote(String noteId, NoteDto noteDto) {
+    public boolean updateNote(String noteId, NoteDto noteDto) {
         var noteEntity = noteDao.findById(noteId);
         if (noteEntity.isPresent()){
             var note = noteEntity.get();
@@ -42,43 +42,36 @@ public final class NoteBoImpl implements NoteBo {
             note.setNoteDate(noteDto.getNoteDate());
             noteDao.save(note);
 
-            System.out.println("Note Updated Successfully");
+            return true;
         }
         else {
-            System.out.println("Note Not Found");
+            return false;
         }
 
 
     }
 
     @Override
-    public void deleteNote(String noteId) {
+    public boolean deleteNote(String noteId) {
         var noteEntity = noteDao.findById(noteId);
         if (noteEntity.isPresent()){
             noteDao.delete(noteEntity.get());
 
-            System.out.println("Note Deleted Successfully");
+            return true;
         }
         else {
-            System.out.println("Note Not Found");
+           return false;
         }
     }
 
     @Override
     public NoteDto getNote(String note) {
-
-        var noteEntity = noteDao.findById(note);
-        return mapping.convertToDto(noteEntity.get());
-
+        return noteDao.findById(note).map(mapping::convertToDto).orElse(null);
     }
 
 
     @Override
     public List<NoteDto> getAllNotes() {
-
-        var allNotes = noteDao.findAll();
-        return mapping.convertToDto(allNotes);
-
-
+        return mapping.convertToDto(noteDao.findAll());
     }
 }
