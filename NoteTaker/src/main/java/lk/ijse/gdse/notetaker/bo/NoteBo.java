@@ -6,9 +6,9 @@ import java.util.List;
 
 public sealed interface NoteBo permits NoteBoImpl {
     String saveNote(NoteDto noteDto);
-    void updateNote(String noteId,NoteDto noteDto);
-    boolean deleteNote(String noteId);
-    NoteDto findNoteById(String noteId);
+    void updateNote(String noteId, NoteDto noteDto);
+    void deleteNote(String noteId);
+    NoteDto getNote(String note);
     List<NoteDto> getAllNotes();
 
 }

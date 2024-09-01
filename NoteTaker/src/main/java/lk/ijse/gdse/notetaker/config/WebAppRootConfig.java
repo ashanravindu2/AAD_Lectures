@@ -21,24 +21,24 @@ import javax.sql.DataSource;
 @Configuration
 @ComponentScan(basePackages = "lk.ijse.gdse.notetaker")
 @EnableWebMvc
-@EnableJpaRepositories
+@EnableJpaRepositories(basePackages = "lk.ijse.gdse.notetaker")
 @EnableTransactionManagement
 public class WebAppRootConfig {
 
+    @Bean
     public ModelMapper modelMapper(){
         return new ModelMapper();
     }
-
     @Bean
     public DataSource dataSource() {
+        // Mysql DB source
         var dmds = new DriverManagerDataSource();
         dmds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dmds.setUrl("jdbc:mysql://localhost:3306/noteTakerAAD68?createDatabaseIfNotExist=true");
+        dmds.setUrl("jdbc:mysql://localhost:3306/noteTakerAAD68?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false");
         dmds.setUsername("root");
         dmds.setPassword("ijse@1967");
         return dmds;
     }
-
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
@@ -48,16 +48,16 @@ public class WebAppRootConfig {
 
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("lk/ijse/gdse/notetaker/entity");
+        factory.setPackagesToScan("lk.ijse.gdse.notetaker.entity");
         factory.setDataSource(dataSource());
         return factory;
     }
 
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-
         JpaTransactionManager txManager = new JpaTransactionManager();
         txManager.setEntityManagerFactory(entityManagerFactory);
         return txManager;
     }
+
 }
