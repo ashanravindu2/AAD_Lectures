@@ -10,7 +10,10 @@ public class AppUtil {
         return "NOTE"+new Random().nextInt(10000);
     }
 
-    //mapping
-    //Note details
+    public static String createUserId(){
+        /*   return "N"+System.currentTimeMillis();*/
+        // return "N"+ UUID.randomUUID().toString();
+        return "USER"+new Random().nextInt(10000);
+    }
 
 }
