@@ -1,4 +1,4 @@
-package lk.ijse.gdse.notetaker.bo;
+package lk.ijse.gdse.notetaker.service;
 
 import lk.ijse.gdse.notetaker.dao.NoteDao;
 import lk.ijse.gdse.notetaker.dto.NoteDto;
@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @Service
 
-public final class NoteBoImpl implements NoteBo {
+public  class NoteServiceImpl implements NoteService {
 
     @Autowired
     private NoteDao noteDao;
@@ -68,12 +68,12 @@ public final class NoteBoImpl implements NoteBo {
 
     @Override
     public NoteDto getNote(String note) {
-        return noteDao.findById(note).map(mapping::convertToDto).orElse(null);
+        return noteDao.findById(note).map(mapping::convertToDTO).orElse(null);
     }
 
 
     @Override
     public List<NoteDto> getAllNotes() {
-        return mapping.convertToDto(noteDao.findAll());
+        return mapping.convertToDTO(noteDao.findAll());
     }
 }

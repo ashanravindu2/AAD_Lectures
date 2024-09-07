@@ -16,17 +16,16 @@ public class Mapping {
     @Autowired
     private ModelMapper modelMapper;
 
-    //Matters of noteEntity and NoteDto
-    public NoteDto convertToDto(NoteEntity noteEntity){
-        return modelMapper.map(noteEntity, NoteDto.class);
+    //matters of NoteEntity and DTO
+    public NoteDto convertToDTO(NoteEntity note) {
+        return modelMapper.map(note, NoteDto.class);
     }
-    public NoteEntity convertToEntity(NoteDto noteDto){
-        return modelMapper.map(noteDto, NoteEntity.class);
+    public NoteEntity convertToEntity(NoteDto dto) {
+        return modelMapper.map(dto, NoteEntity.class);
     }
-    public List<NoteDto> convertToDto(List<NoteEntity> notes){
+    public List<NoteDto> convertToDTO(List<NoteEntity> notes) {
         return modelMapper.map(notes, List.class);
     }
-
     //User matters mapping
     public UserEntity convertToUserEntity(UserDto userDTO) {
         return modelMapper.map(userDTO, UserEntity.class);

@@ -1,19 +1,16 @@
 package lk.ijse.gdse.notetaker.controller;
 
 
-import lk.ijse.gdse.notetaker.bo.UserBo;
-import lk.ijse.gdse.notetaker.dto.NoteDto;
+import lk.ijse.gdse.notetaker.service.UserService;
 import lk.ijse.gdse.notetaker.dto.UserDto;
 import lk.ijse.gdse.notetaker.util.AppUtil;
 import lombok.RequiredArgsConstructor;
-import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -22,7 +19,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private final UserBo userBo;
+    private final UserService userService;
 
     @GetMapping("health")
     public String healthCheck() {
@@ -32,7 +29,6 @@ public class UserController {
     //Todo: CRUD of the Note
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> saveUser(
-            @RequestParam("userId") String userId,
             @RequestParam("firstName") String firstName,
             @RequestParam("lastName") String lastName,
             @RequestParam("email") String email,
@@ -44,7 +40,7 @@ public class UserController {
 
         //build the user object
 
-        var buildUserDto = new UserDto();
+        UserDto buildUserDto = new UserDto();
         buildUserDto.setFirstName(firstName);
         buildUserDto.setLastName(lastName);
         buildUserDto.setEmail(email);
@@ -52,8 +48,10 @@ public class UserController {
         buildUserDto.setProfilePic(base64ProfilePic);
 
         //send to the bo layer
-        userBo.saveUser(buildUserDto);
+        return new ResponseEntity<>(userService.saveUser(buildUserDto), HttpStatus.CREATED);
+
     }
+
 
 
       //
@@ -65,4 +63,4 @@ public class UserController {
 
 
 
-}
+

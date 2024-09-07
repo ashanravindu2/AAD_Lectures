@@ -13,8 +13,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "users")
 @Entity
+@Table(name = "users")
+
 public class UserEntity implements SuperEntity {
     @Id
     private String userId;

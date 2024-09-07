@@ -1,11 +1,10 @@
-package lk.ijse.gdse.notetaker.bo;
+package lk.ijse.gdse.notetaker.service;
 
-import lk.ijse.gdse.notetaker.dto.NoteDto;
 import lk.ijse.gdse.notetaker.dto.UserDto;
 
 import java.util.List;
 
-public   interface UserBo {
+public interface UserService {
     String saveUser(UserDto userDto);
     boolean updateUser(String userId, UserDto userDto);
     boolean deleteUser(String userId);

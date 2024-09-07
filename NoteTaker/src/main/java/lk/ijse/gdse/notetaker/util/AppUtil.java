@@ -17,8 +17,8 @@ public class AppUtil {
         return "USER"+new Random().nextInt(10000);
     }
 
-    public static String toBase64ProfilePic(String profilrPic){
-        return Base64.getEncoder().encodeToString((profilrPic.getBytes()));
+    public static String toBase64ProfilePic(String profilePic){
+        return Base64.getEncoder().encodeToString(profilePic.getBytes());
     }
 
 }

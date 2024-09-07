@@ -12,12 +12,12 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @ComponentScan(basePackages = "lk.ijse.gdse.notetaker")
 @EnableWebMvc
-@EnableJpaRepositories(basePackages = "lk.ijse.gdse.notetaker.dao")
+@EnableJpaRepositories(basePackages = "lk.ijse.gdse.notetaker")
 @EnableTransactionManagement
 @MultipartConfig(
-        fileSizeThreshold = 0,  //
-        maxFileSize = 1024 * 1024 * 10, //10MB
-        maxRequestSize = 0    //
+        fileSizeThreshold = 1024 * 1024 * 2, //2MB
+        maxFileSize = 1024 * 1024 * 10, // 10MB
+        maxRequestSize = 1024 * 1024 * 50 // 50MB
 )
 public class WebAppConfig {
 }

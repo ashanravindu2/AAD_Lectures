@@ -1,8 +1,7 @@
 package lk.ijse.gdse.notetaker.controller;
 
-import lk.ijse.gdse.notetaker.bo.NoteBo;
+import lk.ijse.gdse.notetaker.service.NoteService;
 import lk.ijse.gdse.notetaker.dto.NoteDto;
-import lk.ijse.gdse.notetaker.util.AppUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +19,7 @@ import java.util.List;
 public class NoteController {
 
     @Autowired
-    private final NoteBo noteBo;
+    private final NoteService noteService;
 
     @GetMapping("health")
     public String healthCheck(){
@@ -29,48 +28,32 @@ public class NoteController {
 
     //Todo: CRUD of the Note
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> createNote(@RequestBody NoteDto noteDto){ //http://localhost:8080/NoteTaker/api/v1/notes
-        //Todo Handle With BO
+    public ResponseEntity<String> createNote(@RequestBody NoteDto note) {
+
+        return new ResponseEntity<>(noteService.saveNote(note), HttpStatus.CREATED);
 
 
-
-        var saveNote = noteBo.saveNote(noteDto);
-
-        return ResponseEntity.ok(saveNote);
     }
-
-    @GetMapping(value = "getAllNotes",produces = MediaType.APPLICATION_JSON_VALUE) //http://localhost:8080/NoteTaker/api/v1/notes/getAllNotes
+    @GetMapping(value = "allnotes", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<NoteDto> getAllNotes(){
-        //Todo Handle With BO
-       return noteBo.getAllNotes();
-
+        return noteService.getAllNotes();
     }
-
-    @GetMapping(value = "/{noteId}",produces = MediaType.APPLICATION_JSON_VALUE) //http://localhost:8080/NoteTaker/api/v1/notes/NOTE6221
-    public NoteDto getNote(@PathVariable("noteId") String noteId){
-        //Todo Handle With BO
-        System.out.println("NoteId :"+ noteId);
-        return noteBo.getNote(noteId);
-
-    }
-
-    @PutMapping(value = "/{noteId}",produces = MediaType.APPLICATION_JSON_VALUE) //http://localhost:8080/NoteTaker/api/v1/notes/N3664
-    public String updateNote(@PathVariable("noteId") String noteId, @RequestBody NoteDto noteDto){
-        //Todo Handle With BO
-     /*   System.out.println("NoteId :"+ noteId);
-        System.out.println(noteDto + " Updated");
-        return "Note Updated Successfully";*/
-       noteBo.updateNote(noteId,noteDto);
-        return "Note Updated Successfully";
+    @GetMapping(value = "/{noteId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public NoteDto getNote(@PathVariable ("noteId") String noteId)  {
+        return noteService.getNote(noteId);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping(value = "/{noteId}") //http://localhost:8080/NoteTaker/api/v1/notes/NOTE6221
-    public String deleteNote(@PathVariable("noteId") String noteId){
-        //Todo Handle With BO
-       noteBo.deleteNote(noteId);
-        return "Note Deleted Successfully";
+    @PatchMapping(value = "/{noteId}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> updateNote(@PathVariable ("noteId") String noteId, @RequestBody NoteDto note) {
+        return noteService.updateNote(noteId, note) ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @DeleteMapping(value ="/{noteId}" )
+    public ResponseEntity<String> deleteNote(@PathVariable ("noteId") String noteId) {
+        return noteService.deleteNote(noteId) ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
+
 
 
 }
