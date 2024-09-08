@@ -1,8 +1,9 @@
 package lk.ijse.gdse.notetaker.service;
 
 import lk.ijse.gdse.notetaker.dao.NoteDao;
-import lk.ijse.gdse.notetaker.dto.NoteDto;
+import lk.ijse.gdse.notetaker.dto.impl.NoteDto;
 import lk.ijse.gdse.notetaker.entity.NoteEntity;
+import lk.ijse.gdse.notetaker.exeption.NoteNotFound;
 import lk.ijse.gdse.notetaker.util.AppUtil;
 import lk.ijse.gdse.notetaker.util.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import java.util.Optional;
 
 
 @Service
-
+@Transactional
 public  class NoteServiceImpl implements NoteService {
 
     @Autowired
@@ -31,20 +32,19 @@ public  class NoteServiceImpl implements NoteService {
     }
 
     @Override
-    public boolean updateNote(String noteId, NoteDto noteDto) {
+    public void updateNote(String noteId, NoteDto noteDto) {
         Optional<NoteEntity> noteEntity = noteDao.findById(noteId);
-        if (noteEntity.isPresent()){
-            var note = noteEntity.get();
-            note.setNoteTitle(noteDto.getNoteTitle());
-            note.setNoteDes(noteDto.getNoteDes());
-            note.setProrityLevel(noteDto.getProrityLevel());
-            note.setNoteDate(noteDto.getNoteDate());
-            noteDao.save(note);
-            return true;
+        if (!noteEntity.isPresent()){
+          throw new NoteNotFound("Note Not Found");
         }
         else {
-            return false;
+           noteEntity.get().setNoteTitle(noteDto.getNoteTitle());
+           noteEntity.get().setNoteDes(noteDto.getNoteDes());
+           noteEntity.get().setNoteDate(noteDto.getNoteDate());
+           noteEntity.get().setProrityLevel(noteDto.getProrityLevel());
+
         }
+
     }
 
     @Override

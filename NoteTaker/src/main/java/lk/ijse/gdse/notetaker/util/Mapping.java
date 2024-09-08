@@ -1,10 +1,9 @@
 package lk.ijse.gdse.notetaker.util;
 
-import lk.ijse.gdse.notetaker.dto.NoteDto;
-import lk.ijse.gdse.notetaker.dto.UserDto;
+import lk.ijse.gdse.notetaker.dto.impl.NoteDto;
+import lk.ijse.gdse.notetaker.dto.impl.UserDto;
 import lk.ijse.gdse.notetaker.entity.NoteEntity;
 import lk.ijse.gdse.notetaker.entity.UserEntity;
-import org.hibernate.type.AnyType;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +34,7 @@ public class Mapping {
     public UserDto convertToUserDTO(UserEntity userEntity) {
         return modelMapper.map(userEntity, UserDto.class);
     }
-    public List<UserDto> convertUserToDTO(List<UserEntity> userEntities) {
+    public List<UserDto> convertUserToDTOList(List<UserEntity> userEntities) {
         return modelMapper.map(userEntities, new TypeToken<List<UserDto>>() {}.getType());
     }
 }

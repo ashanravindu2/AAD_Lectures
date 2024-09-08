@@ -1,13 +1,13 @@
 package lk.ijse.gdse.notetaker.controller;
 
+import lk.ijse.gdse.notetaker.exeption.NoteNotFound;
 import lk.ijse.gdse.notetaker.service.NoteService;
-import lk.ijse.gdse.notetaker.dto.NoteDto;
+import lk.ijse.gdse.notetaker.dto.impl.NoteDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -45,7 +45,14 @@ public class NoteController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PatchMapping(value = "/{noteId}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> updateNote(@PathVariable ("noteId") String noteId, @RequestBody NoteDto note) {
-        return noteService.updateNote(noteId, note) ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        try {
+            noteService.updateNote(noteId, note);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }catch (NoteNotFound e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @DeleteMapping(value ="/{noteId}" )

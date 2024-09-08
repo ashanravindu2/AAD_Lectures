@@ -1,9 +1,12 @@
 package lk.ijse.gdse.notetaker.controller;
 
-import lk.ijse.gdse.notetaker.dto.NoteDto;
+import lk.ijse.gdse.notetaker.customerObj.UserResponse;
+import lk.ijse.gdse.notetaker.exeption.DataPersistFailedException;
+import lk.ijse.gdse.notetaker.exeption.UserNotFoundException;
 import lk.ijse.gdse.notetaker.service.UserService;
-import lk.ijse.gdse.notetaker.dto.UserDto;
+import lk.ijse.gdse.notetaker.dto.impl.UserDto;
 import lk.ijse.gdse.notetaker.util.AppUtil;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,10 +17,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")
+@RequiredArgsConstructor
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private final UserService userService;
 
     @GetMapping("health")
     public String healthCheck(){
@@ -32,27 +36,42 @@ public class UserController {
             @RequestPart ("email") String email,
             @RequestPart ("password") String password,
             @RequestPart ("profilePic") String profilePic) {
-      var base64ProfilePic = AppUtil.toBase64ProfilePic(profilePic);
-      var buildUserDTO = new UserDto();
-        buildUserDTO.setUserId(AppUtil.createUserId());
-        buildUserDTO.setFirstName(firstName);
-        buildUserDTO.setLastName(lastName);
-        buildUserDTO.setEmail(email);
-        buildUserDTO.setPassword(password);
-        buildUserDTO.setProfilePic(base64ProfilePic);
-        //send to the service layer
-        return new ResponseEntity<>(userService.saveUser(buildUserDTO), HttpStatus.CREATED);
+
+        try {
+            var base64ProfilePic = AppUtil.toBase64ProfilePic(profilePic);
+            var buildUserDTO = new UserDto();
+            buildUserDTO.setUserId(AppUtil.createUserId());
+            buildUserDTO.setFirstName(firstName);
+            buildUserDTO.setLastName(lastName);
+            buildUserDTO.setEmail(email);
+            buildUserDTO.setPassword(password);
+            buildUserDTO.setProfilePic(base64ProfilePic);
+
+            userService.saveUser(buildUserDTO);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        }catch (DataPersistFailedException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 
     @DeleteMapping(value ="/{userId}" )
     public ResponseEntity<String> deleteUser(@PathVariable ("userId") String userId) {
-        return userService.deleteUser(userId) ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        try {
+            userService.deleteUser(userId);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (UserNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping(value = "/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public UserDto getUser(@PathVariable ("userId") String userId)  {
-        return  userService.getUser(userId);
+    public UserResponse getUser(@PathVariable ("userId") String userId)  {
+        return userService.getUser(userId);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -64,7 +83,40 @@ public class UserController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PatchMapping(value = "/{userId}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> updateUser(@PathVariable ("userId") String userId, @RequestBody UserDto userDto) {
-        return userService.updateUser(userId, userDto) ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        try {
+            userService.updateUser(userId, userDto);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }catch (UserNotFoundException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PatchMapping(value = "/{userId}",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public  ResponseEntity<String> updateUser(
+                                                            @RequestPart("firstName") String firstName,
+                                                            @RequestPart ("lastName") String lastName,
+                                                            @RequestPart ("email") String email,
+                                                            @RequestPart ("password") String password,
+                                                            @RequestPart ("profilePic") String profilePic,
+                                                            @PathVariable ("userId") String userId) {
+        try {
+            var base64ProfilePic = AppUtil.toBase64ProfilePic(profilePic);
+            UserDto buildUserDTO = new UserDto();
+            buildUserDTO.setUserId(userId);
+            buildUserDTO.setFirstName(firstName);
+            buildUserDTO.setLastName(lastName);
+            buildUserDTO.setEmail(email);
+            buildUserDTO.setPassword(password);
+            buildUserDTO.setProfilePic(base64ProfilePic);
+            userService.updateUser( buildUserDTO);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }catch (UserNotFoundException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }
 
