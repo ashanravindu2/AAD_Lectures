@@ -1,8 +1,5 @@
 package lk.ijse.gdse.notetaker.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
-import lk.ijse.gdse.notetaker.entity.NoteEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,5 +16,5 @@ public class UserDto {
     private String email;
     private String password;
     private String profilePic;
-    private List<NoteEntity> notes;
+    private List<NoteDto> notes;
 }

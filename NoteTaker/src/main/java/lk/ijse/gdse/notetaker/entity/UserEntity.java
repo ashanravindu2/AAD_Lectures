@@ -15,7 +15,6 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "users")
-
 public class UserEntity implements SuperEntity {
     @Id
     private String userId;
@@ -26,8 +25,7 @@ public class UserEntity implements SuperEntity {
     private String password;
     @Column(columnDefinition = "LONGTEXT")
     private String profilePic;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<NoteEntity> notes;
-
 
 }

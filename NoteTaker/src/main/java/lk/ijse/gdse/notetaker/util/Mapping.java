@@ -4,7 +4,9 @@ import lk.ijse.gdse.notetaker.dto.NoteDto;
 import lk.ijse.gdse.notetaker.dto.UserDto;
 import lk.ijse.gdse.notetaker.entity.NoteEntity;
 import lk.ijse.gdse.notetaker.entity.UserEntity;
+import org.hibernate.type.AnyType;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -34,6 +36,6 @@ public class Mapping {
         return modelMapper.map(userEntity, UserDto.class);
     }
     public List<UserDto> convertUserToDTO(List<UserEntity> userEntities) {
-        return modelMapper.map(userEntities, List.class);
+        return modelMapper.map(userEntities, new TypeToken<List<UserDto>>() {}.getType());
     }
 }

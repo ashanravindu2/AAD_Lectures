@@ -22,11 +22,8 @@ public  class NoteServiceImpl implements NoteService {
     @Autowired
     private Mapping mapping;
 
-
-
     @Override
     public String saveNote(NoteDto noteDto) {
-
         noteDto.setNoteId(AppUtil.createNoteId());
         var noteEntity = mapping.convertToEntity(noteDto);
         noteDao.save(noteEntity);
@@ -43,14 +40,11 @@ public  class NoteServiceImpl implements NoteService {
             note.setProrityLevel(noteDto.getProrityLevel());
             note.setNoteDate(noteDto.getNoteDate());
             noteDao.save(note);
-
             return true;
         }
         else {
             return false;
         }
-
-
     }
 
     @Override
@@ -70,7 +64,6 @@ public  class NoteServiceImpl implements NoteService {
     public NoteDto getNote(String note) {
         return noteDao.findById(note).map(mapping::convertToDTO).orElse(null);
     }
-
 
     @Override
     public List<NoteDto> getAllNotes() {
