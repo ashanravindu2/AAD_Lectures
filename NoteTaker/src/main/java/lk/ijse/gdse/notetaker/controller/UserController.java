@@ -15,46 +15,38 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
-@Controller
 public class UserController {
 
     @Autowired
     private final UserService userService;
 
     @GetMapping("health")
-    public String healthCheck() {
-        return "User taker is running!";
+    public String healthCheck(){
+        return "Controller taker is running!";
     }
 
     //Todo: CRUD of the Note
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> saveUser(
-            @RequestParam("firstName") String firstName,
-            @RequestParam("lastName") String lastName,
-            @RequestParam("email") String email,
-            @RequestParam("password") String password,
-            @RequestParam("profilePic") String profilePic){
+            @RequestPart("firstName") String firstName,
+            @RequestPart ("lastName") String lastName,
+            @RequestPart ("email") String email,
+            @RequestPart ("password") String password,
+            @RequestPart ("profilePic") String profilePic) {
 
-        //Handle profile pic
-        String base64ProfilePic = AppUtil.toBase64ProfilePic(profilePic);
+        System.out.println("awaaaaaaaaaa===================================");
 
-        //build the user object
-
-        UserDto buildUserDto = new UserDto();
-        buildUserDto.setFirstName(firstName);
-        buildUserDto.setLastName(lastName);
-        buildUserDto.setEmail(email);
-        buildUserDto.setPassword(password);
-        buildUserDto.setProfilePic(base64ProfilePic);
-
-        //send to the bo layer
-        return new ResponseEntity<>(userService.saveUser(buildUserDto), HttpStatus.CREATED);
-
+      var base64ProfilePic = AppUtil.toBase64ProfilePic(profilePic);
+      var buildUserDTO = new UserDto();
+        buildUserDTO.setUserId(AppUtil.createUserId());
+        buildUserDTO.setFirstName(firstName);
+        buildUserDTO.setLastName(lastName);
+        buildUserDTO.setEmail(email);
+        buildUserDTO.setPassword(password);
+        buildUserDTO.setProfilePic(base64ProfilePic);
+        //send to the service layer
+        return new ResponseEntity<>(userService.saveUser(buildUserDTO), HttpStatus.CREATED);
     }
-
-
-
-      //
 }
 
 

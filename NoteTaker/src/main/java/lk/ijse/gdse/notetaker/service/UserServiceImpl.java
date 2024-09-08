@@ -22,12 +22,11 @@ public  class UserServiceImpl implements UserService {
 
     @Override
     public String saveUser(UserDto userDto) {
-   /*     userDto.setUserId(AppUtil.createUserId());
+        userDto.setUserId(AppUtil.createUserId());
         userDao.save(mapping.convertToUserEntity(userDto));
         return "User saved successfully";
 
-*/
-        return null;
+
     }
 
     @Override

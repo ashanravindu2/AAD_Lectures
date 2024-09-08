@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/notes")
+@RequestMapping("api/v1/notes")
 @RequiredArgsConstructor
-@Controller
 public class NoteController {
 
     @Autowired
@@ -30,8 +29,8 @@ public class NoteController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> createNote(@RequestBody NoteDto note) {
 
-        return new ResponseEntity<>(noteService.saveNote(note), HttpStatus.CREATED);
-
+        var saveData = noteService.saveNote(note);
+        return ResponseEntity.ok(saveData);
 
     }
     @GetMapping(value = "allnotes", produces = MediaType.APPLICATION_JSON_VALUE)

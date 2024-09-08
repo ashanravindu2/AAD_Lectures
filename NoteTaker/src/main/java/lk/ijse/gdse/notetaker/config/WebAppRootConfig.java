@@ -20,6 +20,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan(basePackages = "lk.ijse.gdse.notetaker")
+@EnableWebMvc
 @EnableJpaRepositories(basePackages = "lk.ijse.gdse.notetaker")
 @EnableTransactionManagement
 public class WebAppRootConfig {
@@ -44,7 +45,6 @@ public class WebAppRootConfig {
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setGenerateDdl(true);
-
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setPackagesToScan("lk.ijse.gdse.notetaker.entity");
