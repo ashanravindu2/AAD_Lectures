@@ -84,7 +84,7 @@ public class UserController {
     @PatchMapping(value = "/{userId}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> updateUser(@PathVariable ("userId") String userId, @RequestBody UserDto userDto) {
         try {
-            userService.updateUser(userId, userDto);
+            userService.updateUser( userDto);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }catch (UserNotFoundException e){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
