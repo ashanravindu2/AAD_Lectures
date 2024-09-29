@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -35,10 +36,12 @@ public class UserController {
             @RequestPart ("lastName") String lastName,
             @RequestPart ("email") String email,
             @RequestPart ("password") String password,
-            @RequestPart ("profilePic") String profilePic) {
+            @RequestPart ("profilePic") MultipartFile profilePic) {
 
         try {
-            var base64ProfilePic = AppUtil.toBase64ProfilePic(profilePic);
+            byte[] imageByteCollection = profilePic.getBytes();
+
+            String base64ProfilePic = AppUtil.toBase64ProfilePic(imageByteCollection);
             var buildUserDTO = new UserDto();
             buildUserDTO.setUserId(AppUtil.createUserId());
             buildUserDTO.setFirstName(firstName);
@@ -99,10 +102,11 @@ public class UserController {
                                                             @RequestPart ("lastName") String lastName,
                                                             @RequestPart ("email") String email,
                                                             @RequestPart ("password") String password,
-                                                            @RequestPart ("profilePic") String profilePic,
+                                                            @RequestPart ("profilePic") MultipartFile profilePic,
                                                             @PathVariable ("userId") String userId) {
         try {
-            var base64ProfilePic = AppUtil.toBase64ProfilePic(profilePic);
+            byte [] imageByteCollection = profilePic.getBytes();
+            String base64ProfilePic = AppUtil.toBase64ProfilePic(imageByteCollection);
             UserDto buildUserDTO = new UserDto();
             buildUserDTO.setUserId(userId);
             buildUserDTO.setFirstName(firstName);
